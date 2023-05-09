@@ -1,12 +1,13 @@
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 
 public class PopulationCSVParser {
-    public long getTotalPopulation(String[] lines) {
-        long total = 0;
+    public List<Long> getTotalPopulation(List<String> lines) {
+        List<Long> total = new ArrayList<>();
         for(String line : lines) {
             String[] parts = line.split(",");
             if(parts.length >= 4) {
-                String populationStr = parts[3].trim();
+                String populationStr = parts[4].trim();
                 try {
                     long population = Long.parseLong(populationStr);
                     total += population;
