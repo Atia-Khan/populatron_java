@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
+
 public class PopulationCounterTest {
     @Test
     public void testPopulationCounterDisplaysCorrectTotal() throws Exception {
@@ -26,9 +27,13 @@ public class PopulationCounterTest {
         // Assert
         System.out.flush();
         String output = baos.toString();
-        assertEquals("Population counter should return correct total", expected, output );
+        assertEquals(expected, output );
 
         // Teardown
         System.setOut(old);
     }
+
+
+ 
+
 }
